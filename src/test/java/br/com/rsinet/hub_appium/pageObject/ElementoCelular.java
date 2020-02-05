@@ -27,4 +27,18 @@ public class ElementoCelular {
 	public void setaVoltarGeral() {
 		moverTela.tap(PointOption.point(982, 1687)).perform();
 	}
+
+	public void esolherPreco() {
+		moverTela.press(PointOption.point(49, 437)).moveTo(PointOption.point(962, 437)).release().perform();
+	}
+
+	public void encontrarProduto(PageProdutos pageProdutos) {
+		Boolean mano = pageProdutos.getHp2310INEAR();
+		while (mano.equals(true)) {
+			arrastarTelaParaBaixo();
+			if (pageProdutos.getTexto().equals("HP PAVILION X360 - 11T TOUCH LAPTOP")) {
+				break;
+			}
+		}
+	}
 }

@@ -10,7 +10,7 @@ import br.com.rsinet.hub_appium.enums.DriverType;
 
 public class ConfigFileReader {
 	private Properties properties;
-	private final String propertyFilePath = "configs//Configuration.properties";
+	private final String propertyFilePath = "config//Configuration.properties";
 
 	public ConfigFileReader() {
 		BufferedReader ler;
@@ -85,4 +85,12 @@ public class ConfigFileReader {
 			throw new RuntimeException(
 					"nome do browser não especificado no arquivo Configuration.properties: " + browserName);
 	}
+
+//	public String getReportConfigPath() {
+//		String reportConfigPath = properties.getProperty("reportConfigPath");
+//		if (reportConfigPath != null)
+//			return reportConfigPath;
+//		else
+//			throw new RuntimeException("Report não especificado ");
+//	}
 }

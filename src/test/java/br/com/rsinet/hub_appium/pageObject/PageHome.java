@@ -30,6 +30,9 @@ public class PageHome {
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewSearch")
 	private WebElement imagemLupa;
 
+	@FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.ImageView")
+	private WebElement headPhones;
+
 	public void clicarMenu() {
 		menu.click();
 	}
@@ -46,8 +49,16 @@ public class PageHome {
 		lupa.sendKeys("hp");
 	}
 
+	public void escreverProdutoNaoExistenteNaLupa() {
+		lupa.sendKeys("corinthians");
+	}
+
 	public void clickNaLupa() {
 		imagemLupa.click();
+	}
+
+	public void clickHeadphones() {
+		headPhones.click();
 	}
 
 }
