@@ -9,7 +9,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class PageCadastro {
 	private AndroidDriver<WebElement> driver;
-	private String expetativa = "manoBrou17";
+	private String expetativa = "manoBrou18";
 	private String expetativaNaFalha = "LOGIN";
 	private String atual;
 

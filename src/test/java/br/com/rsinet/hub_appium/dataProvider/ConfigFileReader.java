@@ -86,11 +86,11 @@ public class ConfigFileReader {
 					"nome do browser não especificado no arquivo Configuration.properties: " + browserName);
 	}
 
-//	public String getReportConfigPath() {
-//		String reportConfigPath = properties.getProperty("reportConfigPath");
-//		if (reportConfigPath != null)
-//			return reportConfigPath;
-//		else
-//			throw new RuntimeException("Report não especificado ");
-//	}
+	public String getReportConfigPath() {
+		String reportConfigPath = properties.getProperty("reportConfigPath");
+		if (reportConfigPath != null)
+			return reportConfigPath;
+		else
+			throw new RuntimeException("Report não especificado ");
+	}
 }

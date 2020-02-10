@@ -4,7 +4,7 @@ import br.com.rsinet.hub_appium.cucumber.Context;
 import cucumber.api.java.After;
 
 public class Hooks {
-	Context contexto;
+	private Context contexto;
 
 	public Hooks(Context context) {
 		contexto = context;

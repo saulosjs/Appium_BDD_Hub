@@ -42,7 +42,8 @@ public class DriverManager {
 	}
 
 	public void fecharDriver() {
-		driver.quit();
+		if (driver != null)
+			driver.quit();
 	}
 
 }
