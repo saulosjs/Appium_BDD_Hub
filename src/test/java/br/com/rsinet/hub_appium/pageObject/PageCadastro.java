@@ -4,18 +4,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
 public class PageCadastro {
 	private AndroidDriver<WebElement> driver;
-	private String expetativa = "manoBrou18";
+	private String expetativa = "manoBrou27";
 	private String atual;
+	private WebDriverWait wait;
 
 	public PageCadastro(AndroidDriver<WebElement> driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, 10);
 	}
+
+	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]")
+	private WebElement esperaPais;
 
 	@FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.EditText")
 	private WebElement usuario;
@@ -82,6 +89,14 @@ public class PageCadastro {
 
 	public void clickEmail() {
 		email.click();
+	}
+
+	public void esperarEmail() {
+		wait.until(ExpectedConditions.elementToBeClickable(email));
+	}
+
+	public void esperarPais() {
+		wait.until(ExpectedConditions.elementToBeClickable(esperaPais));
 	}
 
 	public void escreverEmail() {

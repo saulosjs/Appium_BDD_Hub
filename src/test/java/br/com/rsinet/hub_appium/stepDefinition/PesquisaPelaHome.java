@@ -50,14 +50,13 @@ public class PesquisaPelaHome {
 	}
 
 	@Quando("^colocar as especificacao no fildro$")
-	public void colocar_as_especificacao_no_fildro() throws InterruptedException {
+	public void colocar_as_especificacao_no_fildro() throws Exception {
 		Thread.sleep(2000);
 		produtos.clickFiltro();
-		produtos.clickPreco();
-		Thread.sleep(2000);
-		celular.esolherPreco();
-		produtos.clickCompatipility();
-		produtos.clickOpcao2();
+		celular.procuraTexto("BY CONNECTOR");
+		produtos.clickBlueTooth();
+		celular.procuraTexto("BY COLOR");
+		produtos.clickRoxo();
 		produtos.clickApply();
 	}
 

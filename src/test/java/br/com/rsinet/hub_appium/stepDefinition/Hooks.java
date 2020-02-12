@@ -32,7 +32,6 @@ public class Hooks {
 
 			Files.copy(sourcePath, new File(caminhoDestino));
 
-			Reporter.addScreenCaptureFromPath(caminhoDestino);
 		} catch (IOException e) {
 			System.out.println("erro na escreenshot");
 		}

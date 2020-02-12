@@ -33,16 +33,6 @@ public class ElementoCelular {
 		moverTela.press(PointOption.point(49, 437)).moveTo(PointOption.point(962, 437)).release().perform();
 	}
 
-	public void encontrarProduto(PageProdutos pageProdutos) {
-		Boolean mano = pageProdutos.getHp2310INEAR();
-		while (mano.equals(true)) {
-			arrastarTelaParaBaixo();
-			if (pageProdutos.getTexto().equals("HP PAVILION X360 - 11T TOUCH LAPTOP")) {
-				break;
-			}
-		}
-	}
-
 	public void procuraTexto(String texto) throws Exception {
 		((FindsByAndroidUIAutomator) driver).findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""

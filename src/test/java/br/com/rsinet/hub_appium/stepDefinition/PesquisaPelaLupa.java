@@ -40,9 +40,8 @@ public class PesquisaPelaLupa {
 	}
 
 	@Quando("^escolher o produto$")
-	public void escolher_o_produto() {
-		elementoCelular.encontrarProduto(pageProdutos);
-		pageProdutos.clickHpPavilionX360();
+	public void escolher_o_produto() throws Exception {
+		elementoCelular.procuraTexto("HP PAVILION X360 - 11T TOUCH LAPTOP");
 
 	}
 

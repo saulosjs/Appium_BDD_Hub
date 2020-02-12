@@ -4,15 +4,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
 public class PageHome {
 	private AndroidDriver driver;
+	private WebDriverWait wait;
 
 	public PageHome(AndroidDriver<?> driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, 10);
 	}
 
 	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewMenu")
@@ -41,6 +45,10 @@ public class PageHome {
 		login.click();
 	}
 
+	public void esperaCadastro() {
+		wait.until(ExpectedConditions.elementToBeClickable(cadastro));
+	}
+
 	public void clicarCadastro() {
 		cadastro.click();
 	}
@@ -59,6 +67,10 @@ public class PageHome {
 
 	public void clickHeadphones() {
 		headPhones.click();
+	}
+
+	public void esperaPhone() {
+		wait.until(ExpectedConditions.elementToBeClickable(headPhones));
 	}
 
 }

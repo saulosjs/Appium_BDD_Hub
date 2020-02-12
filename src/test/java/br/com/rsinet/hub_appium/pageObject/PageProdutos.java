@@ -16,6 +16,12 @@ public class PageProdutos {
 		PageFactory.initElements(driver, this);
 	}
 
+	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ExpandableListView/android.widget.LinearLayout[6]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.view.View[3]")
+	private WebElement roxo;
+
+	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ExpandableListView/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.widget.TextView")
+	private WebElement blueTooth;
+
 	@FindBy(how = How.XPATH, using = "//android.widget.RelativeLayout[@content-desc=\"Search\"]/android.widget.LinearLayout/android.widget.GridView/android.widget.RelativeLayout[2]/android.widget.ImageView")
 	private WebElement hp2310INEAR;
 
@@ -115,6 +121,14 @@ public class PageProdutos {
 
 	public String getAtualHome() {
 		return resul.getText();
+	}
+
+	public void clickBlueTooth() {
+		blueTooth.click();
+	}
+
+	public void clickRoxo() {
+		roxo.click();
 	}
 
 }
