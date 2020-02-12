@@ -11,7 +11,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class PageCadastro {
 	private AndroidDriver<WebElement> driver;
-	private String expetativa = "manoBrou27";
+	private String expetativa = "manoBrou28";
 	private String atual;
 	private WebDriverWait wait;
 

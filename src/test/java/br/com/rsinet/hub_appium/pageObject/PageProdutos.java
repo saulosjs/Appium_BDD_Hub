@@ -4,17 +4,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
 public class PageProdutos {
 	private AndroidDriver<WebElement> driver;
 	private String expectativa;
+	private WebDriverWait wait;
 
 	public PageProdutos(AndroidDriver<WebElement> driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, 10);
 	}
+
+	@FindBy(how = How.ID, using = "com.Advantage.aShopping:id/imageViewProduct")
+	private WebElement esperarprodutos;
 
 	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ExpandableListView/android.widget.LinearLayout[6]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.view.View[3]")
 	private WebElement roxo;
@@ -129,6 +136,10 @@ public class PageProdutos {
 
 	public void clickRoxo() {
 		roxo.click();
+	}
+
+	public void esperarProduto() {
+		wait.until(ExpectedConditions.elementToBeClickable(esperarprodutos));
 	}
 
 }

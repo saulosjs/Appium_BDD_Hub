@@ -51,7 +51,7 @@ public class PesquisaPelaHome {
 
 	@Quando("^colocar as especificacao no fildro$")
 	public void colocar_as_especificacao_no_fildro() throws Exception {
-		Thread.sleep(2000);
+		produtos.esperarProduto();
 		produtos.clickFiltro();
 		celular.procuraTexto("BY CONNECTOR");
 		produtos.clickBlueTooth();
