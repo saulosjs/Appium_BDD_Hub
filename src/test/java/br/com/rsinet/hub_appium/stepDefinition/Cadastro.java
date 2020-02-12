@@ -100,7 +100,8 @@ public class Cadastro {
 		pageCadastro.escreverCidade();
 		pageCadastro.escreverZip();
 		elementoCelular.setaVoltarGeral();
-		elementoCelular.procuraTexto("Use 5 characters or longer");
+		elementoCelular.procuraTexto("USER NAME");
+		pageCadastro.clickEmail();
 	}
 
 	@Quando("^cricar no botao de registra$")
@@ -110,15 +111,13 @@ public class Cadastro {
 
 	@Entao("^verifica se criou o usuario$")
 	public void verifica_se_criou_o_usuario() throws InterruptedException {
-		Thread.sleep(2000);
 		pageHome.clicarMenu();
 		Assert.assertEquals(pageCadastro.getExpectativa(), pageCadastro.getAtual());
 	}
 
 	@Entao("^verifica o erro$")
 	public void verifica_o_erro() throws Throwable {
-		elementoCelular.procuraTexto("Use 5 characters or longer");
-		Assert.assertEquals("Use 5 characters or longer", pageCadastro.getExpectativaNaFalha());
+		Assert.assertEquals("User name required", pageCadastro.getExpectativaNaFalha());
 
 	}
 

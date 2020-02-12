@@ -65,7 +65,7 @@ public class PageCadastro {
 	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]")
 	private WebElement textoPais;
 
-	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]")
+	@FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"Home Page\"]/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView")
 	private WebElement textoErro;
 
 	public WebElement getPrimeiroPais() {
@@ -76,10 +76,12 @@ public class PageCadastro {
 		usuario.sendKeys(expetativa);
 	}
 
-	public void escreverUsuarioErrado() throws InterruptedException {
+	public void clickUsuario() {
 		usuario.click();
-		Thread.sleep(1000);
-		usuario.sendKeys("ac");
+	}
+
+	public void clickEmail() {
+		email.click();
 	}
 
 	public void escreverEmail() {
