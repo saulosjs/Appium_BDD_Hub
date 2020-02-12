@@ -74,6 +74,35 @@ public class Cadastro {
 		elementoCelular.arrastarTelaParaBaixo();
 	}
 
+	@Quando("^o usuario preencher o formulario errado$")
+	public void o_usuario_preencher_o_formulario_errado() throws Throwable {
+		pageCadastro.escreverEmail();
+		pageCadastro.escreverSenha();
+		pageCadastro.escreverConfirmarSenha();
+		pageCadastro.escreverPrimeiroNome();
+		pageCadastro.escreverSobreNome();
+		pageCadastro.escreverTelefone();
+		pageCadastro.clickTelefone();
+		elementoCelular.clickEnter();
+		pageCadastro.clicarPais();
+
+		wait.until(ExpectedConditions.visibilityOf(contexto.getDriverManager().getDriver().findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]"))));
+		elementoCelular.arrastarTelaParaBaixo();
+		elementoCelular.arrastarTelaParaBaixo();
+		pageCadastro.escolherPais();
+
+		pageCadastro.clickEstado();
+		pageCadastro.escreverEstado();
+		elementoCelular.clickEnter();
+		pageCadastro.escreverEndereco();
+		elementoCelular.clickEnter();
+		pageCadastro.escreverCidade();
+		pageCadastro.escreverZip();
+		elementoCelular.setaVoltarGeral();
+		elementoCelular.procuraTexto("Use 5 characters or longer");
+	}
+
 	@Quando("^cricar no botao de registra$")
 	public void cricar_no_botao_de_registra() {
 		pageCadastro.clickBotaoRegistrar();
@@ -86,10 +115,11 @@ public class Cadastro {
 		Assert.assertEquals(pageCadastro.getExpectativa(), pageCadastro.getAtual());
 	}
 
-	@Entao("^verifica que o usuario nao foi criado$")
-	public void verifica_que_o_usuario_nao_foi_criado() {
-		pageHome.clicarMenu();
-		Assert.assertEquals(pageCadastro.getExpectativaNaFalha(), pageCadastro.getAtual());
+	@Entao("^verifica o erro$")
+	public void verifica_o_erro() throws Throwable {
+		elementoCelular.procuraTexto("Use 5 characters or longer");
+		Assert.assertEquals("Use 5 characters or longer", pageCadastro.getExpectativaNaFalha());
+
 	}
 
 }

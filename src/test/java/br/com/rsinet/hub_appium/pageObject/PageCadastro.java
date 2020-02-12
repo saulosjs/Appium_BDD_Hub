@@ -10,7 +10,6 @@ import io.appium.java_client.android.AndroidDriver;
 public class PageCadastro {
 	private AndroidDriver<WebElement> driver;
 	private String expetativa = "manoBrou18";
-	private String expetativaNaFalha = "LOGIN";
 	private String atual;
 
 	public PageCadastro(AndroidDriver<WebElement> driver) {
@@ -66,12 +65,21 @@ public class PageCadastro {
 	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]")
 	private WebElement textoPais;
 
+	@FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]")
+	private WebElement textoErro;
+
 	public WebElement getPrimeiroPais() {
 		return textoPais;
 	}
 
 	public void escreverUsuario() {
 		usuario.sendKeys(expetativa);
+	}
+
+	public void escreverUsuarioErrado() throws InterruptedException {
+		usuario.click();
+		Thread.sleep(1000);
+		usuario.sendKeys("ac");
 	}
 
 	public void escreverEmail() {
@@ -142,7 +150,8 @@ public class PageCadastro {
 		return atual = textoUsuario.getText();
 	}
 
-	public String getExpectativaNaFalha() {
-		return expetativaNaFalha;
+	public Object getExpectativaNaFalha() {
+		return textoErro.getText();
 	}
+
 }

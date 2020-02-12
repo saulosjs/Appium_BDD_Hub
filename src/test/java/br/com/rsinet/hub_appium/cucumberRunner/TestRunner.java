@@ -1,6 +1,7 @@
 package br.com.rsinet.hub_appium.cucumberRunner;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
@@ -15,8 +16,10 @@ import cucumber.api.junit.Cucumber;
 		"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" })
 
 public class TestRunner {
+
 	@AfterClass
-	public static void writeExtentReport() {
-		Reporter.loadXMLConfig(new File("C:/Users/saulo.silva/eclipse-workspace/hub_Advantage/target"));
+	public static void writeExtentReport() throws IOException {
+		Reporter.loadXMLConfig(new File("Config/extent-config.xml"));
+
 	}
 }
