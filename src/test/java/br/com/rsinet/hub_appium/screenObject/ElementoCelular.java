@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_appium.pageObject;
+package br.com.rsinet.hub_appium.screenObject;
 
 import org.openqa.selenium.support.PageFactory;
 

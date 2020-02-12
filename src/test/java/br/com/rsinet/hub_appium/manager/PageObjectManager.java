@@ -3,18 +3,18 @@ package br.com.rsinet.hub_appium.manager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rsinet.hub_appium.pageObject.ElementoCelular;
-import br.com.rsinet.hub_appium.pageObject.PageCadastro;
-import br.com.rsinet.hub_appium.pageObject.PageHome;
-import br.com.rsinet.hub_appium.pageObject.PageProdutos;
+import br.com.rsinet.hub_appium.screenObject.ElementoCelular;
+import br.com.rsinet.hub_appium.screenObject.ScreenCadastro;
+import br.com.rsinet.hub_appium.screenObject.ScreenHome;
+import br.com.rsinet.hub_appium.screenObject.ScreenProdutos;
 import io.appium.java_client.android.AndroidDriver;
 
 public class PageObjectManager {
 
 	private AndroidDriver<WebElement> driver;
-	private PageHome pageHome;
-	private PageProdutos pageProdutos;
-	private PageCadastro pageCadastro;
+	private ScreenHome pageHome;
+	private ScreenProdutos pageProdutos;
+	private ScreenCadastro pageCadastro;
 	private ElementoCelular elementoCelular;
 	private WebDriverWait wait;
 
@@ -22,16 +22,16 @@ public class PageObjectManager {
 		this.driver = driver;
 	}
 
-	public PageHome getPageHome() {
-		return (pageHome == null) ? pageHome = new PageHome(driver) : pageHome;
+	public ScreenHome getPageHome() {
+		return (pageHome == null) ? pageHome = new ScreenHome(driver) : pageHome;
 	}
 
-	public PageProdutos getPageProdutos() {
-		return (pageProdutos == null) ? pageProdutos = new PageProdutos(driver) : pageProdutos;
+	public ScreenProdutos getPageProdutos() {
+		return (pageProdutos == null) ? pageProdutos = new ScreenProdutos(driver) : pageProdutos;
 	}
 
-	public PageCadastro getPageCadastro() {
-		return (pageCadastro == null) ? pageCadastro = new PageCadastro(driver) : pageCadastro;
+	public ScreenCadastro getPageCadastro() {
+		return (pageCadastro == null) ? pageCadastro = new ScreenCadastro(driver) : pageCadastro;
 	}
 
 	public ElementoCelular getElementoCelular() {

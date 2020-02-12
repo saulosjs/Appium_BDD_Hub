@@ -8,16 +8,16 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 
 import br.com.rsinet.hub_appium.cucumber.Context;
-import br.com.rsinet.hub_appium.pageObject.ElementoCelular;
-import br.com.rsinet.hub_appium.pageObject.PageHome;
-import br.com.rsinet.hub_appium.pageObject.PageProdutos;
+import br.com.rsinet.hub_appium.screenObject.ElementoCelular;
+import br.com.rsinet.hub_appium.screenObject.ScreenHome;
+import br.com.rsinet.hub_appium.screenObject.ScreenProdutos;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 public class PesquisaPelaHome {
-	private PageHome home;
-	private PageProdutos produtos;
+	private ScreenHome home;
+	private ScreenProdutos produtos;
 	private ElementoCelular celular;
 	private Context contexto;
 

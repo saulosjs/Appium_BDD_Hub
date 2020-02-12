@@ -7,14 +7,14 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import br.com.rsinet.hub_appium.pageObject.PageHome;
-import br.com.rsinet.hub_appium.pageObject.PageLogin;
+import br.com.rsinet.hub_appium.screenObject.ScreenHome;
+import br.com.rsinet.hub_appium.screenObject.ScreenLogin;
 import io.appium.java_client.android.AndroidDriver;
 
 public class Login {
 	private static AndroidDriver<WebElement> driver;
-	private static PageHome pageHome;
-	private static PageLogin pageLogin;;
+	private static ScreenHome pageHome;
+	private static ScreenLogin pageLogin;;
 
 	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 		DesiredCapabilities caps = new DesiredCapabilities();
@@ -29,8 +29,8 @@ public class Login {
 		URL url = new URL("http://127.0.0.1:4723/wd/hub");
 
 		driver = new AndroidDriver<WebElement>(url, caps);
-		pageHome = new PageHome(driver);
-		pageLogin = new PageLogin(driver);
+		pageHome = new ScreenHome(driver);
+		pageLogin = new ScreenLogin(driver);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		pageHome.clicarMenu();

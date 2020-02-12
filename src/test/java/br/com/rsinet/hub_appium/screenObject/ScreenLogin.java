@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_appium.pageObject;
+package br.com.rsinet.hub_appium.screenObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class PageLogin {
+public class ScreenLogin {
 	private AndroidDriver driver;
 
-	public PageLogin(AndroidDriver driver) {
+	public ScreenLogin(AndroidDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

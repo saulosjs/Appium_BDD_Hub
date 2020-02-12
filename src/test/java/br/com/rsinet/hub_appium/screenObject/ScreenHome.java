@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_appium.pageObject;
+package br.com.rsinet.hub_appium.screenObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,11 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class PageHome {
+public class ScreenHome {
 	private AndroidDriver driver;
 	private WebDriverWait wait;
 
-	public PageHome(AndroidDriver<?> driver) {
+	public ScreenHome(AndroidDriver<?> driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 10);

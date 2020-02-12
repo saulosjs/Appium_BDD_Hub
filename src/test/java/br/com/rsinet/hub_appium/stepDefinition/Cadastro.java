@@ -6,17 +6,17 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.hub_appium.cucumber.Context;
-import br.com.rsinet.hub_appium.pageObject.ElementoCelular;
-import br.com.rsinet.hub_appium.pageObject.PageCadastro;
-import br.com.rsinet.hub_appium.pageObject.PageHome;
+import br.com.rsinet.hub_appium.screenObject.ElementoCelular;
+import br.com.rsinet.hub_appium.screenObject.ScreenCadastro;
+import br.com.rsinet.hub_appium.screenObject.ScreenHome;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 public class Cadastro {
 	private Context contexto;
-	private static PageHome pageHome;
-	private static PageCadastro pageCadastro;
+	private static ScreenHome pageHome;
+	private static ScreenCadastro pageCadastro;
 	private static ElementoCelular elementoCelular;
 	private WebDriverWait wait;
 
